@@ -15,6 +15,7 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
@@ -40,7 +41,7 @@ public class UsuarioController {
 
     @GetMapping("/check-session")
     public String checkSession() {
-        return "O usuário " + usuarioService.getUsuarioAutenticado().getNome() + " está logado.";
+        return "O usuário " + usuarioService.getUsuarioAutenticadoAtualizaUltimaData().getNome() + " está logado.";
     }
 
     @PostMapping("/novo")
